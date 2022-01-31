@@ -11,7 +11,7 @@ license="GPL-3.0-or-later"
 homepage="https://pipewire.org"
 
 do_install() {
-	vmkdir etc/xdg/autostart
+	vmkdir /etc/xdg/autostart
 	vmkdir usr/bin
 	vcopy ${FILESDIR}/pipewire.desktop etc/xdg/autostart
 	vcopy ${FILESDIR}/pipewire-auto usr/bin
