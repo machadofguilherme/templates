@@ -1,0 +1,14 @@
+#!/bin/sh
+
+exec /usr/bin/ananicy start
+exec /sbin/sysctl -e kernel.sched_autogroup_enabled=0
+Nice=19
+SuccessExitStatus=143
+OOMScoreAdjust=-999
+Restart=always
+CPUAccounting=true
+MemoryHigh=16M
+MemoryMax=64M
+ProtectSystem=true
+ProtectHome=true
+PrivateTmp=yes

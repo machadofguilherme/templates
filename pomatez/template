@@ -1,0 +1,31 @@
+# Template file for 'pomatez'
+pkgname=pomatez
+version=1.1.0
+revision=1
+archs="x86_64"
+#wrksrc=
+build_style=fetch
+depends="gtk+3 libnotify nss libXScrnSaver libXtst xdg-utils at-spi2-core util-linux-libs libappindicator libsecret"
+short_desc="Stay Focused. Take a Break."
+maintainer="Guilherme Machado <machadofguilherme@gmail.com>"
+license="MIT"
+homepage="https://roldanjr.github.io/pomatez"
+distfiles="https://github.com/roldanjr/pomatez/releases/download/v${version}/Pomatez-v${version}-linux.deb"
+checksum=569bd2e0b68a0e4e28fa487ef1f17d2acbb1e7f055740860b89230ffb4aacde2
+
+post_extract() {
+	ar -x Pomatez-v${version}-linux.deb
+	bsdtar -xf data.tar.xz
+}
+
+do_install() {
+	vmkdir opt
+	vmkdir usr/share/
+	vmkdir usr/share/applications
+	vmkdir usr/share/doc
+	vmkdir usr/share/icons
+	vcopy opt/Pomatez/ opt
+	vcopy usr/share/applications usr/share
+	vcopy usr/share/icons usr/share
+	vcopy usr/share/doc/pomatez usr/share/doc
+}

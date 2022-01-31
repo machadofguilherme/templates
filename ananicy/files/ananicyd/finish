@@ -1,0 +1,4 @@
+#!/bin/sh
+
+exec /usr/bin/ananicy start
+exec /sbin/sysctl -e kernel.sched_autogroup_enabled=1

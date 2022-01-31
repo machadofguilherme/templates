@@ -1,0 +1,30 @@
+# Template file for 'caprine'
+pkgname=caprine
+version=2.55.2
+revision=1
+archs="x86_64"
+#wrksrc=
+#create_wrksrc=yes
+build_style=fetch
+depends="electron13"
+short_desc="Elegant Facebook Messenger desktop app"
+maintainer="Guilherme Machado <machadofguilherme@gmail.com>"
+license="MIT"
+homepage="https://sindresorhus.com/caprine"
+distfiles="https://github.com/sindresorhus/${pkgname}/releases/download/v${version}/${pkgname}_${version}_amd64.deb"
+checksum=6f93ee9658297b7f58c04256eb6c75abe4e814bf12eeaeaadf0b5292c92f7270
+
+post_extract() {
+	ar -x ${pkgname}_${version}_amd64.deb
+	bsdtar -xf data.tar.xz
+}
+
+do_install() {
+	vmkdir opt
+	vmkdir usr/share
+	vmkdir usr/share/doc
+	vcopy opt/Caprine opt
+	vcopy usr/share/applications usr/share
+	vcopy usr/share/icons usr/share
+	vcopy usr/share/doc/caprine usr/share/doc
+}

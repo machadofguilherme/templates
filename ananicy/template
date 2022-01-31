@@ -1,0 +1,25 @@
+# Template file for 'ananicy'
+pkgname=ananicy
+version=2.2.1
+revision=1
+wrksrc=Ananicy-${version}
+#build_style=gnu-configure
+makedepends=make
+depends=schedtool
+short_desc="Auto nice daemon with community rules support"
+maintainer="Guilherme Machado <machadofguilherme@gmail.com>"
+license="GPL v3.0"
+homepage="https://github.com/Nefelim4ag/Ananicy"
+distfiles="https://github.com/Nefelim4ag/Ananicy/archive/${version}.tar.gz"
+checksum=3e33c3c84d29f93b64079e67eb56c39a4d40b0591e52db171156981b72f648b1
+
+do_install() {
+        make install PREFIX="$DESTDIR"
+}
+
+post_install() {
+	rm -rf $DESTDIR/lib $DESTDIR/usr/lib*
+	vsv ananicyd
+	vlicense LICENSE
+	vdoc README.md
+}

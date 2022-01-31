@@ -1,0 +1,18 @@
+# Template file for 'pipewire-auto'
+pkgname=pipewire-auto
+version=0.1
+revision=1
+archs="i686 x86_64"
+build_style=fetch
+depends="pipewire"
+short_desc="Pipewire autostart"
+maintainer="Guilherme Machado <machadofguilherme@gmail.com>"
+license="GPL-3.0-or-later"
+homepage="https://pipewire.org"
+
+do_install() {
+	vmkdir etc/xdg/autostart
+	vmkdir usr/bin
+	vcopy ${FILESDIR}/pipewire.desktop etc/xdg/autostart
+	vcopy ${FILESDIR}/pipewire-auto usr/bin
+}
