@@ -1,0 +1,8 @@
+====================================================================
+Copie o arquivo "pipewire-auto.desktop" para o seu diretório pessoal
+--------------------------------------------------------------------
+mkdir -p .config/autostart
+cp /usr/share/pipewire-auto/pipewire-auto.desktop .config/autostart
+--------------------------------------------------------------------
+Adicione o pipewire-auto ao início automático
+====================================================================

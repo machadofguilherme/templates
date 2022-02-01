@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Pipewire-Auto
+Exec=/usr/bin/pipewire-auto
+Terminal=false
+Type=Application
+X-GNOME-Autostart-enabled=true
