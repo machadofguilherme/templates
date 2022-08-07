@@ -1,6 +1,6 @@
 # Template file for 'vivaldi-snapshot'
 pkgname=vivaldi-snapshot
-version=5.1.2562.3
+version=5.4.2753.19
 revision=1
 _release=1
 archs="x86_64"
@@ -18,7 +18,7 @@ nostrip=yes
 
 distfiles="https://downloads.vivaldi.com/snapshot/vivaldi-snapshot_${version}-${_release}_amd64.deb"
 _licenseUrl="https://vivaldi.com/privacy/vivaldi-end-user-license-agreement/"
-checksum=e90df862dac9816eeb1c26e7cccf50bbc5085c4ab55fdeb35d0503fb007908ec
+checksum=0ebf0d02e93f795d970108318a8f27e9c222371e67cd599c996754d1a83d17d2
 
 do_extract() {
 	ar x ${XBPS_SRCDISTDIR}/${pkgname}-${version}/vivaldi-snapshot_${version}-${_release}_amd64.deb
