@@ -1,6 +1,6 @@
 # Template file for 'caprine'
 pkgname=caprine
-version=2.55.2
+version=2.55.6
 revision=1
 archs="x86_64"
 #wrksrc=
@@ -12,7 +12,7 @@ maintainer="Guilherme Machado <machadofguilherme@gmail.com>"
 license="MIT"
 homepage="https://sindresorhus.com/caprine"
 distfiles="https://github.com/sindresorhus/${pkgname}/releases/download/v${version}/${pkgname}_${version}_amd64.deb"
-checksum=6f93ee9658297b7f58c04256eb6c75abe4e814bf12eeaeaadf0b5292c92f7270
+checksum=f9b5992f9e17d5a647d49848e48e00746d9140af5a158c64a7cb53037417bb9d
 
 post_extract() {
 	ar -x ${pkgname}_${version}_amd64.deb
